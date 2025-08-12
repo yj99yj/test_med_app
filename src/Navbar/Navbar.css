@@ -1,0 +1,155 @@
+/* 메인 네비게이션 바 스타일링 */
+nav {
+    padding: 1.5rem;
+    position: fixed;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+}
+/* 드롭다운 메뉴 스타일링 */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    display: none;
+    min-width: 120px;
+    padding: 8px 0;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+/* 사용자 환영 메시지 스타일링 */
+.welcome-user {
+    position: relative;
+    cursor: pointer;
+}
+/* 마우스 오버 시 드롭다운 메뉴 표시 */
+.welcome-user:hover .dropdown-menu {
+    display: block;
+}
+/* 드롭다운 메뉴 항목 스타일링 */
+.dropdown-menu li {
+    display: block;
+    width: 150px;
+    padding:5px;
+}
+/* 드롭다운 메뉴의 링크 스타일링 */
+.dropdown-menu li a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+/* 드롭다운 메뉴의 링크에 대한 호버 효과 */
+.dropdown-menu li a:hover {
+    color: #2190ff;
+}
+/* 네비게이션 바의 로고 스타일링 */
+.nav__logo {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #0d213f;
+    cursor: pointer;
+}
+/* 로고 내의 span 스타일링 */
+.nav__logo span {
+    color: #3685fb;
+}
+/* 네비게이션 바의 아이콘 스타일링 */
+.nav__icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+/* 네비게이션 링크 스타일링 */
+.nav__links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+/* 네비게이션의 개별 링크 스타일링 */
+.link a {
+    padding: 0 1rem;
+    color: #0d213f;
+    transition: 0.3s;
+}
+/* 네비게이션의 개별 링크에 대한 호버 효과 */
+.link a:hover {
+    color: #3685fb;
+}
+/* 모바일 반응형 미디어 쿼리 */
+@media (max-width: 768px) {
+    .nav__logo {
+        margin-right: auto;
+    }
+    .nav__icon {
+        display: block;
+    }
+    .nav__links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .nav__links.active {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        margin: auto;
+        background-color: #fff;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+        animation: slideDown 0.5s ease-in-out; /* 애니메이션 효과 */
+    }
+}
+/* 슬라이드 다운 애니메이션의 키프레임 */
+@keyframes slideDown {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* 버튼 스타일 */
+.btn1 {
+    border: 2px solid #3685fb;
+    background-color: white;
+    color: black;
+    border-radius: 50px;
+}
+.btn1:hover {
+    background-color: #3685fb; /* 호버 효과 */
+    color: white; /* 호버 효과 */
+}
+.btn2 {
+    border: 2px solid #3685fb;
+    background-color: white;
+    color: black;
+    border-radius: 50px;
+    height:30px;
+    display:flex; /* 아이템 정렬 및 내용 정렬 */
+    align-items:center; /* 아이템 정렬 및 내용 정렬 */
+    justify-content:center; /* 아이템 정렬 및 내용 정렬 */
+    margin-top:3px; /* 위쪽 여백 */
+}
+.btn2:hover {
+    background-color:#3685fb; /* 호버 효과 */
+    color:white; /* 호버 효과 */
+}
