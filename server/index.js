@@ -8,26 +8,36 @@ const app = express();
 app.set('view engine','ejs')
 app.use(express.static('public'))
 
+// Port
 const PORT = process.env.PORT || 8181;
 
+// ✅ Correct CORS setup (remove duplicates)
+app.use(cors({
+  origin: '*', // In production, replace with actual domain
+  methods: ['GET', 'POST'],
+}));
 
-// Middleware
+// ✅ Middleware
 app.use(express.json());
-app.use(cors());
 
-// Connect to MongoDB
-connectToMongo();
-
-// Routes
-app.use('/api/auth', require('./routes/auth'));
-
-app.get('/', (req, res) => {
-    res.send('Hello World!');
+// ✅ Log every request (for debugging)
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url}`);
+  next();
 });
 
+// ✅ Connect to MongoDB
+connectToMongo();
 
+// ✅ Routes
+app.use('/api/auth', require('./routes/auth'));
 
-  // Start the server
+// ✅ Root route (optional)
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+// ✅ Start the server
 app.listen(PORT, () => {
-console.log(`Server is running on port http://localhost:${PORT}`);
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
