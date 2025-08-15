@@ -12,7 +12,7 @@ const Login = () => {
     if (sessionStorage.getItem("auth-token")) {
       navigate("/");
     }
-  }, [navigate]);
+  }, []);
 
   const login = async (e) => {
     e.preventDefault();
@@ -32,9 +32,11 @@ const Login = () => {
       window.location.reload();
     } else {
       if (json.errors) {
-        json.errors.forEach(err => alert(err.msg));
+         for (const error of json.errors) {
+          alert(error.msg);
+        }
       } else {
-        alert(json.error || "Login failed");
+        alert(json.error);
       }
     }
   };
