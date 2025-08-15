@@ -6,6 +6,7 @@ const Navbar = () => {
   const [click, setClick] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const navigate = useNavigate();
 
   const handleClick = () => setClick(!click);
@@ -33,6 +34,8 @@ const Navbar = () => {
 
   useEffect(() => {
     const storedEmail = sessionStorage.getItem("email");
+     const storedName = sessionStorage.getItem("name");
+
     if (storedEmail) {
       setIsLoggedIn(true);
       setEmail(storedEmail);
@@ -62,6 +65,11 @@ const Navbar = () => {
         <li className="link">
           <Link to="/healthblog">Health Blog</Link>
         </li>
+        <li className="link">
+  <Link to="/instant-consultation">
+    <button className="btn1">Instant Consultation</button>
+  </Link>
+</li>
         <li className="link">
           <Link to="/reviews">Reviews</Link>
         </li>

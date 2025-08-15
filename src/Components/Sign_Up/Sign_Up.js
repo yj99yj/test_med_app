@@ -9,7 +9,7 @@ const Sign_Up = () => {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
-  const [showerr, setShowerr] = useState('');
+  const [showerr, setShowerr] = useState([]);
   const navigate = useNavigate();
 
   const register = async (e) => {
@@ -22,6 +22,7 @@ const Sign_Up = () => {
     });
 
     const json = await response.json();
+    console.log(json);
 
     if (json.authtoken) {
       sessionStorage.setItem("auth-token", json.authtoken);
@@ -33,14 +34,14 @@ const Sign_Up = () => {
       window.location.reload();
     } else {
       if (json.errors) {
-         for (const error of json.errors) {
-                    setShowerr(error.msg); // Show error messages
-                }
-            } else {
-                setShowerr(json.error);
-            }
-        }
-    };
+        setShowerr(json.errors);
+      } else if (json.error) {
+        setShowerr([{ msg: json.error }]);
+      } else {
+        setShowerr([{ msg: "알 수 없는 오류가 발생했습니다." }]);
+      }
+    }
+  };
 
   return (
     <div className="container" style={{ marginTop: '5%' }}>

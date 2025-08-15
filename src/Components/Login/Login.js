@@ -12,7 +12,7 @@ const Login = () => {
     if (sessionStorage.getItem("auth-token")) {
       navigate("/");
     }
-  }, []);
+  }, [navigate]);
 
   const login = async (e) => {
     e.preventDefault();
