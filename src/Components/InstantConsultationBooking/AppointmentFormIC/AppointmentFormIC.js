@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import AppointmentFormIC from './InstantConsultationBooking/AppointmentFormIC/AppointmentFormIC';
 
 const AppointmentFormIC = ({ doctorName, doctorSpeciality, onSubmit }) => {
     const [name, setName] = useState('');

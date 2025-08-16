@@ -4,9 +4,7 @@ import Navbar from './Components/Navbar/Navbar';
 import LandingPage from './Components/Landing_Page/Landing_Page';
 import Sign_Up from './Components/Sign_Up/Sign_Up';
 import Login from './Components/Login/Login';
-
 import InstantConsultation from './Components/InstantConsultationBooking/InstantConsultation';
-import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 
 function App() {
