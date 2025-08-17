@@ -53,9 +53,9 @@ const InstantConsultation = () => {
     useEffect(() => {
         getDoctorsDetails();
         // const authtoken = sessionStorage.getItem("auth-token");
-        // if (!authtoken) {
-        //     navigate("/login");
-        // }
+        //if (!authtoken) {
+        //    navigate("/login");
+      //  }
     }, [searchParams])
 
     return (
