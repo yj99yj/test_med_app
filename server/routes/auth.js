@@ -4,13 +4,12 @@ const bcrypt = require('bcryptjs');
 const { body, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 const UserSchema = require('../models/User');
-
 const dotenv = require('dotenv');
 dotenv.config();
 
 const JWT_SECRET = process.env.JWT_SECRET || 'default_jwt_secret_for_dev';
 
-// ✅ 회원가입 API
+// ✅ 회원가입
 router.post('/register', [
   body('email', "Please enter a valid email").isEmail(),
   body('name', "Username should be at least 4 characters").isLength({ min: 4 }),
@@ -49,7 +48,7 @@ router.post('/register', [
   }
 });
 
-// ✅ 로그인 API
+// ✅ 로그인
 router.post('/login', [
   body('email', "Please enter a valid email").isEmail(),
 ], async (req, res) => {
@@ -73,7 +72,7 @@ router.post('/login', [
   }
 });
 
-// ✅ 이메일 기반 유저 정보 조회
+// ✅ 이메일로 유저 조회
 router.get('/user', async (req, res) => {
   try {
     const email = req.headers.email;
@@ -91,7 +90,7 @@ router.get('/user', async (req, res) => {
   }
 });
 
-// ✅ 유저 정보 업데이트
+// ✅ 유저 정보 수정
 router.put('/user', [
   body('name', "Username should be at least 4 characters").isLength({ min: 4 }),
   body('phone', "Phone number should be 10 digits").isLength({ min: 10 }),

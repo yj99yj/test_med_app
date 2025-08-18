@@ -3,7 +3,7 @@ const cors = require('cors');
 const http = require('http');
 const connectToMongo = require('./db');
 const app = express();
-
+require('dotenv').config();
 
 app.set('view engine','ejs')
 app.use(express.static('public'))
@@ -11,14 +11,11 @@ app.use(express.static('public'))
 // Port
 const PORT = process.env.PORT || 8181;
 
-// ✅ Correct CORS setup (remove duplicates)
-app.use(cors({
-  origin: '*', // In production, replace with actual domain
-  methods: ['GET', 'POST'],
-}));
-
-// ✅ Middleware
+app.use(cors({ origin: '*', methods: ['GET', 'POST'] }));
 app.use(express.json());
+app.set('view engine','ejs');
+app.use(express.static('public'));
+
 
 // ✅ Log every request (for debugging)
 app.use((req, res, next) => {
