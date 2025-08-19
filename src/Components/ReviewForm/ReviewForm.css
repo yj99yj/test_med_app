@@ -1,0 +1,189 @@
+.review-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .consultation-card {
+    border: 1px solid #ccc;
+    padding: 16px 24px;
+    width: 100%;
+    max-width: 500px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .feedback-button {
+    margin-top: 12px;
+    padding: 8px 16px;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .review-box {
+    border: 1px solid #ddd;
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  .rating-container {
+    margin-top: 10px;
+  }
+  
+  .stars {
+    display: flex;
+    gap: 5px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .star {
+    color: #ccc;
+  }
+  
+  .star.filled {
+    color: #FFD700;
+  }
+  
+  .warning {
+    color: red;
+  }
+  
+.review-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  
+  /* 리뷰 박스 스타일 */
+  .review-box {
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* 제목 */
+  .review-box h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  /* 라벨과 입력창 정렬 */
+  .review-box label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  
+  .review-box input[type="text"],
+  .review-box textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+  }
+  
+  /* 버튼 */
+  .review-box button {
+    margin-top: 20px;
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .review-box button:hover {
+    background-color: #45a049;
+  }
+  
+  /* 경고 메시지 */
+  .warning {
+    background-color: #ffe4e4;
+    color: #d8000c;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  /* 제출된 메시지 박스 */
+  .submitted-message {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e3f7ff;
+    border-left: 5px solid #2196F3;
+    border-radius: 6px;
+  }
+  
+  /* 별점 스타일 */
+.rating-container {
+    margin-top: 15px;
+  }
+  
+  .stars {
+    display: flex;
+    gap: 5px;
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .star {
+    color: #ccc;
+    transition: color 0.2s;
+  }
+  
+  .star.filled {
+    color: #FFD700; /* Gold color */
+  }
+  
+  .rating-number {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #333;
+  }
+  .cancel-button {
+    margin-left: 10px;
+    background-color: #ccc;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  .cancel-button:hover {
+    background-color: #bbb;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .button-group button {
+    flex: 1;
+  }
+  

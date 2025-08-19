@@ -8,6 +8,8 @@ import InstantConsultation from './Components/InstantConsultationBooking/Instant
 import 'reactjs-popup/dist/index.css';
 import BookingConsultation from './Components/BookingConsultation'
 import Notification from "./Components/Notification/Notification";
+import ReviewForm from "./Components/ReviewForm/ReviewForm";
+import ProfileForm from "./Components/ProfileCard/ProfileCard";
 
 function App() {
   return (
@@ -20,7 +22,9 @@ function App() {
           <Route path="/signup" element={<Sign_Up />} />
           <Route path="/instant-consultation" element={<InstantConsultation />} />
           <Route path="/Bookingconsultation" element={<BookingConsultation />} />
-          <Route path="<Notification>" element={<Notification/>}/> 
+          <Route path="/Notification" element={<Notification />}/>
+          <Route path="/reviews" element={< ReviewForm />}/>
+          <Route path="/profilecard" element={<ProfileForm />}/>
         </Routes>
       </BrowserRouter>
     </div>

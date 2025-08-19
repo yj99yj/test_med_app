@@ -78,7 +78,7 @@ const Navbar = () => {
           <li className="link welcome-user">
             {email}
             <ul className="dropdown-menu">
-              <li><Link to="/profile">My Profile</Link></li>
+              <li><Link to="/profilecard">My Profile</Link></li>
               <li><Link to="/myappointments">My Appointments</Link></li>
               <li><button className="btn2" onClick={handleLogout}>Logout</button></li>
             </ul>
