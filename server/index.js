@@ -1,40 +1,31 @@
 const express = require('express');
 const cors = require('cors');
-const http = require('http');
 const connectToMongo = require('./db');
 const app = express();
-require('dotenv').config();
-
-app.set('view engine','ejs')
-app.use(express.static('public'))
-
-// Port
+const path = require('path');
 const PORT = process.env.PORT || 8181;
 
-app.use(cors({ origin: '*', methods: ['GET', 'POST'] }));
+
+// 미들웨어
 app.use(express.json());
-app.set('view engine','ejs');
-app.use(express.static('public'));
+app.use(cors());
 
-
-// ✅ Log every request (for debugging)
-app.use((req, res, next) => {
-  console.log(`${req.method} ${req.url}`);
-  next();
-});
-
-// ✅ Connect to MongoDB
+// MongoDB에 연결
 connectToMongo();
 
-// ✅ Routes
+// 라우트
 app.use('/api/auth', require('./routes/auth'));
 
-// ✅ Root route (optional)
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+    res.send('Hello World!');
 });
 
-// ✅ Start the server
+// 서버 시작
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+console.log(`서버가 http://localhost:${PORT} 포트에서 실행 중입니다.`);
 });
